@@ -61,6 +61,7 @@ if (program.reddit) {
   loading('Hacker');
 } else {
   console.log("Invalid command");
+  spinner.stop();
 }
 
 process.on('uncaughtException', function (e) {
