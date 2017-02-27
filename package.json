@@ -1,0 +1,23 @@
+{
+  "name": "hn",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "morning": "./index.js"
+  },
+  "author": "Bunchhieng Soth <Bunchhieng@gmail.com> (http://www.hackbits.com)",
+  "license": "ISC",
+  "dependencies": {
+    "cheerio": "^0.22.0",
+    "cli-spinners": "^1.0.0",
+    "commander": "^2.9.0",
+    "openurl": "^1.1.1",
+    "ora": "^1.1.0",
+    "request": "^2.79.0",
+    "valid-url": "^1.0.9"
+  }
+}
