@@ -13,6 +13,7 @@ const ora = require('ora');
 const spinner = ora('...').start();
 const HN = 'https://news.ycombinator.com/';
 const REDDIT = 'https://www.reddit.com/r/programming/';
+const CRYPTO = 'https://www.reddit.com/r/cryptocurrency/';
 
 let getNews = link => {
   request(link, (err, response, body) => {
@@ -51,6 +52,7 @@ program
   .version('1.0.0')
   .option('-r, --reddit', 'Open Reddit Programming News')
   .option('-h, --hn', 'Open Hacker News')
+  .option('-c, --crypto', 'Open Cryptocurrency reddit home page')
   .parse(process.argv);
 
 if (program.reddit) {
@@ -59,10 +61,15 @@ if (program.reddit) {
 } else if (program.hn) {
   getNews(HN);
   loading('Hacker');
+} else if (program.crypto) {
+  getNews(CRYPTO);
+  loading('Cryptocurrency');
 } else {
   console.log("Invalid command");
   spinner.stop();
 }
+
+spinner.stop();
 
 process.on('uncaughtException', function (e) {
   spinner.stop();
